@@ -1,6 +1,6 @@
-> **Original Authority Notice:** 본 기술 명세의 법적·공학적 판단 최상위 기준은 한글 원본(`README.md` / `README.ko.md` / `Press-Brake-Shear-Edge-Safety-Paper.md`)에 귀속되며, 기타 언어 번역본은 보조 참조용으로만 기능한다.
+> **원본 권위 고지:** 본 기술 명세의 최상위 법적·공학적 권위는 한글 원본 (`README.ko.md` / `Press-Brake-Shear-Edge-Safety-Paper.md`)에 있습니다. `README.md`는 보조 영문 참고본입니다. 불일치 시 한글 원본이 우선합니다.
 
-# Press-Brake-Shear-Edge-Safety-Paper.md — 프레스·절곡기·절단기 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 (v1.0 Core Baseline)
+# README.ko.md — 프레스·절곡기·절단기 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 (v1.0 Core Baseline)
 
 > 본 안전보조시스템이 이동 운송장치뿐만 아니라 산업현장 전반에 뿌리내려, 판금의 꽃이라 불리는 고난도 가공 현장에서 한 명이라도 덜 다치게 하기를 바란다. 구형 설비라 하더라도 안전은 양보할 수 없다는 원칙 하에, 설비 교체를 강요하는 것이 아니라 각 회사가 오랜 기간 숙련해 온 고유한 시스템의 구동을 최대한 안전하게 보조함을 목적으로 한다. 특정 기업의 신형으로 교체를 전제하지 않으므로 기존 체계와 공존하며, 가벼운 구조와 초저지연 실행에 초점을 두었다.  
 > 본 백서는 특정 기업이나 브랜드에 종속되지 않는 범용 생존 아키텍처를 기반으로 작성되었으며, 작업자 감시가 아닌 안전 작업 환경 토대를 보조 조성하는 것을 최우선 목표로 삼았습니다. EN 12622(완속 10mm/s Safe Speed 및 Mute Point 연동) 및 ISO 13857/13854(신체 도달 방지 및 최소 간극) 기준에 준하는 5mm 오프셋 보조 핑거, 절단기 10mm 이하 수동·미세 가공 및 기존 방호장치 해제·뮤팅(Bypass/Mute) 시 조용한 보조 상시 가동, 금형·날 크기 및 소재 두께 변형 무관성, 날다이 형상·간격 연동 위험도 가중치 산정, Mute Point 이하 부드러운 감속 하강(관성·유압 충격 $1/400$ 감쇄, 놀람 반사 억제, 장시간 반복 충격·진동에 따른 근골격계 직업병 예방) 연동 초저지연 정지 및 안전 높이(원점) 즉시 상향 복구, 급작스러운 정전 및 전원 복귀 대응 무전원 기구/자력 낙하 방지 및 자동재기동 불허(soma-moa 비상전력 생존 연동), IEC 60204-1 기반 비침습 접점 연동, IEC 61508/62061 기능 안전 지향 eFPGA 초저지연 제어, soma-moa 현대적 재해석 안전 프레임워크(Safety-II 정상 가동 보조 & Just Culture 기반 PII 10초 파기 최소 로깅) 연동 조용한 보조(Quiet Assist), 3중 센서 융합(60GHz FMCW, 열화상, 정전용량), 비전·열화상·이상음향 경량 로컬 AI 분석 에이전트, T-Reg 15% 성능 저하 모드 및 UWB 스마트태그 연동 제어를 통합·정립하였습니다. 텍스트 저작권에는 CC BY 4.0, 파생되는 기술 청구 및 실시권에는 DPL v1.0(Defensive Patent License v1.0)을 이원화 적용합니다.
@@ -99,7 +99,7 @@
 
 ## 7. 실리보호 및 법적 적용 범위 이원화 (Practical Protection & License Separation)
 
-* **원안 우선 원칙:** 본 명세서의 법적·기술적 해석은 한국어 원본(`README.md` / `README.ko.md` / `Press-Brake-Shear-Edge-Safety-Paper.md`)을 최우선 기준으로 적용하며, 기타 언어 번역본은 참고용으로만 기능한다.
+* **원안 우선 원칙:** 본 명세서의 법적·기술적 해석은 한국어 원본(`README.ko.md` / `Press-Brake-Shear-Edge-Safety-Paper.md`)을 최우선 기준으로 적용하며, 기타 언어 번역본은 참고용으로만 기능한다.
 * **저작권 및 특허 라이선스 이원화 적용:** 본 문서 텍스트 표현물 및 시각 자료의 저작권에는 **CC BY 4.0**이 적용되며, 본 문서에 기술된 기술적 사상, 아키텍처 구조, 파생 특허 방어 및 통상실시권 호환성에는 **DPL v1.0 (Defensive Patent License v1.0)**을 독립하여 이원화 적용한다.
 * **영업비밀 보호 및 구현체 분리 명시:** 본 공개 백서는 상위 아키텍처 사상과 개념적 메커니즘 개시를 목적으로 하며, 실제 현장 캘리브레이션 파라미터(임계치), eFPGA RTL 회로 설계도, 정밀 CAD 파일, 양산 펌웨어 바이너리는 영업비밀(Trade Secret)로 별도 비공개 유지한다. 개념 실증용(PoC) 참조 코드는 오프라인 레포지토리 자산으로 독자 분류·보관한다.
 * **개념적 방향성 정의 및 구현 보증 불포함 (Directional Guidance & No Implementation Warranty):** 본 백서에 기술된 아키텍처, 메커니즘 및 도식은 선행기술 방어 공표 및 공학적 방향성 제시(Directional Guidance)를 1차 목적으로 하며, 본 문서 자체로 개별 산업 현장에 대한 실제 구현체 완결성, 시제품 작동 및 commercial 상용화 동작을 직접 보증하는 것은 아니다. 실제 현장 적용 및 장비 장착 시에는 각 가공 설비의 물리적·유압적·전기적 특성에 맞춘 별도의 상세 엔지니어링, 파라미터 캘리브레이션 및 안전 검증 절차가 독자적으로 수행되어야 한다.
@@ -119,7 +119,7 @@
   * 상위 아키텍처 전략 명세 (`ARCHITECTURE_STRATEGY.md`) — GitHub: `deundeuni / Chiplet-APU-Multi-System-Survival-Architecture` 저장소 내 수록
   * 풀스택 무중단 비상전력 생존 아키텍처 백서 (`POWER_SURVIVAL_SPEC.ko.md`) — soma-moa v1.0 Universal Emergency Power Survival Standard (L0~L3 전력 연동 및 파워 록아웃)
   * 엣지·온디바이스 자율 연산 백서 (`On-Device-Edge-Survival-Paper`) — GitHub: `deundeuni / On-Device-Edge-Survival-Paper`
-  * 본 백서 전용 독립 저장소 (`Press-Brake-Shear-Edge-Safety-Paper`) — GitHub: `deundeuni / Press-Brake-Shear-Edge-Safety-Paper` | 메인 백서 파일: `Press-Brake-Shear-Edge-Safety-Paper.md`
+  * 본 백서 전용 독립 저장소 (`Press-Brake-Shear-Edge-Safety-Paper`) — GitHub: `deundeuni / Press-Brake-Shear-Edge-Safety-Paper` | 메인 백서 파일: `README.md` (영문 보조) / `README.ko.md` (한글 원본)
   * 최상위 거점 관문 및 메인 저장소 (`soma-moa`) — GitHub: `deundeuni / soma-moa` | CERN Zenodo DOI: `10.5281/zenodo.22435773` (https://doi.org/10.5281/zenodo.22435773) | 관문 도메인: `somamoa.ai.kr` | 거점 철학 조항: `PHILOSOPHY.ko.md` (soma-moa 0번 헌장, 4-4장 하인리히 1931 재해석 & Safety-II / Just Culture / Quiet Assist 정립)
 * **법적 근거 및 적용 라이선스 규정 (Legal Statutes & Licenses)**
   * 대한민국 특허법 제103조 — 선사용에 의한 통상실시권
