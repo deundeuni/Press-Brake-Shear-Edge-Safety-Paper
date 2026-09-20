@@ -1,146 +1,154 @@
-> **Original Authority Notice:** The supreme legal and engineering authority of this specification belongs to the original Korean text (`README.ko.md`). This file (`README.md`) serves solely as an auxiliary English reference. In case of any discrepancy, the Korean text shall prevail.  
-> **국문 안내:** 본 문서는 영문 보조본입니다. 법적/기술적 원본 권위는 한글 `README.ko.md`에 있습니다.
+> **Multilingual Publication Notice:** This document is a dual-language (Korean/English) publication of identical content. v1.2 2026-09-20 (Korean: [README.ko.md](README.ko.md))  
+> **Original Authority Notice:** The ultimate criterion for legal and engineering judgment of this technical specification belongs to the Korean original (`README.ko.md`), and the English version functions solely as a supporting reference.
 
-# Press-Brake-Shear-Edge-Safety-Paper — Near-Proximity Safety System for Power Presses, Press Brakes, and Shears and Local AI Edge Autonomous Survival Control Architecture (v1.0 Core Baseline)
+# Press-Brake-Shear-Edge-Safety-Paper — Press, Shear & Bending Machine Proximity Safety System and Local AI Edge Autonomous Survival Control Architecture (v1.2 Core Baseline)
 
-> It is hoped that this auxiliary safety system takes root not only in mobile transportation devices but across all industrial job sites, mitigating hand and finger injuries in high-difficulty metal fabrication workflows. Under the principle that safety cannot be compromised even on legacy equipment, this system does not force equipment replacement but aims to safely assist the operation of unique, long-established machinery. It avoids requiring replacement with newer models, thereby coexisting with legacy infrastructure through a lightweight structure focused on ultra-low latency execution.  
-> This whitepaper was formulated based on a universal survival architecture independent of specific vendors or brands, prioritizing the creation of a safe working environment rather than worker surveillance. It integrates: 5mm offset auxiliary fingers compliant with EN 12622 (Safe Speed <= 10mm/s and Mute Point integration) and ISO 13857/13854 (reach prevention and minimum gaps); continuous silent auxiliary operation during manual/fine shearing under 10mm and safeguard bypass/muting; scale invariance across die sizes and material thicknesses; dynamic risk weighting based on die profile and gap clearance; smooth decelerated descent below Mute Point (mitigating inertial/hydraulic impact by 1/400, suppressing startle reflexes, and preventing musculoskeletal occupational illness from repetitive impacts); ultra-low latency motor stopping and immediate upward origin recovery; power-loss magnetic/mechanical drop prevention and auto-restart lockout (integrated with soma-moa emergency power survival); non-invasive dry contact integration via IEC 60204-1; eFPGA ultra-low latency motor control aligned with IEC 61508/62061 functional safety; Quiet Assist under the modern re-interpreted soma-moa safety framework (Safety-II operational continuity & Just Culture PII 10-second purge logging); 3-sensor fusion (60GHz FMCW radar, thermal array, capacitance); lightweight local multimodal AI analysis agents; T-Reg 15% power degradation mode; and UWB smart-tag authentication. Dual licensing is applied: CC BY 4.0 for text copyright and DPL v1.0 (Defensive Patent License v1.0) for derivative technical claims and patent immunity.
+> It is hoped that this safety auxiliary system will take root not only in mobile transport devices but throughout industrial sites, so that even one less person is injured in high-difficulty metalworking environments, often called the flower of sheet metal processing. Under the principle that safety cannot be compromised even for older equipment, this architecture does not force equipment replacement; rather, it aims to assist the safe operation of unique systems that each company has mastered over a long period. Since it does not premise replacement with a specific company's new models, it coexists with existing frameworks, focusing on a lightweight structure and ultra-low latency execution.  
+> This white paper is formulated based on a universal survival architecture independent of specific corporations or brands, prioritizing the establishment of a safe auxiliary working environment over worker surveillance. It integrates and establishes: a 5mm offset auxiliary finger complying with EN 12622 (Safe Speed ≤ 10mm/s & Mute Point) and ISO 13857/13854 (preventing reach and minimum gaps); continuous Quiet Assist during manual micro-processing under 10mm or when existing safeguards are bypassed/muted; invariance to mold/blade scale and material thickness; risk weight calculation linked to blade/die profiles; Mute Point-linked decelerated descent (attenuating inertia/hydraulic shock by $1/400$, suppressing startle reflexes, and preventing musculoskeletal occupational diseases from long-term repetitive vibration) triggering ultra-low latency stop and immediate upward recovery to safety height (origin); non-powered mechanical/magnetic drop prevention and auto-restart prohibition during sudden power outages and recovery (linked to soma-moa emergency power survival); IEC 60204-1 based non-invasive contact interlocking; IEC 61508/62061 functional safety-oriented eFPGA ultra-low latency control; Quiet Assist linked to the soma-moa modern reinterpretation safety framework (Safety-II normal operation assist & Just Culture-based PII 10-second destruction minimal logging); triple sensor fusion (60GHz FMCW, thermal, capacitive); vision/thermal/anomalous sound lightweight local AI analysis agents; T-Reg 15% degraded performance mode; and UWB smart tag linked control. Text copyright applies CC BY 4.0, while derived technical claims and cross-licensing apply DPL v1.0 (Defensive Patent License v1.0) independently.
 
 ---
 
 ## 0. Designer's Declaration & Core Claims
 
-1. **Architectural Conception:**  
-   This architecture specification establishes an autonomous survival control structure designed to prevent worker entrapment hazards in heavy-duty machinery such as power presses, shears, and press brakes. It induces immediate motor cutoff at hardware (eFPGA) and lightweight local AI levels with ultra-low latency, operating independently of external communication networks or remote servers. The unified design authority of this architecture belongs exclusively to the designer (deundeuni).
+1. **Architectural Conception & Uniqueness of Technology Combination:**  
+   To prevent frequent worker accidents in high-load pinch-point hazard machinery such as presses, shears, and press brakes, this architectural specification establishes an autonomous survival control structure that immediately induces motor drive stoppage at ultra-low latency execution speeds at the terminal local hardware (eFPGA) and lightweight local AI level, without relying on communication networks or upper-level servers. The integrated design authority of this architecture belongs to the designer (deundeuni).
 
 2. **Software Utility Limitation:**  
-   Tools utilized during the drafting of this document were limited to passive formatting and text refinement utilities operating under the explicit architectural logic and edge autonomous control boundaries defined by the designer.
+   The tools utilized during the drafting of this document were restricted to passive execution utilities that performed formatting and contextual refinement based on the architectural logic and edge autonomous control categories defined by the designer.
 
-3. **10 Core Mechanisms & Prior Art Fork Points:**  
-   * 5mm Offset Auxiliary Finger Physical Structure — Incorporates a lightweight 1.5T spring-loaded 150/80mm structure operating within 5mm of the V-die, simultaneously performing physical support and push-away actions aligned with ISO 13857 and ISO 13854.  
-   * Mute Point Slow-Descent, Ultra-Low Latency Stop, and Immediate Upward Origin Recovery Logic — Integrates with EN 12622 Safe Speed (<=10mm/s) and Mute Point profiles, mitigating inertial/hydraulic shock and bounce to prevent mechanical lockup while reducing worker startle reflexes and preventing long-term musculoskeletal occupational illness, triggering 0.1ms eFPGA motor cutoff and immediate upward recovery to safe origin height upon anomaly detection.  
-   * Manual Shearing under 10mm and Safeguard Bypass/Muting Silent Auxiliary Continuity — Ensures that during small-component shearing or physical safeguard bypass/muting, the independent 3-sensor array and eFPGA interlock remain actively monitoring as a silent auxiliary guardian to execute ultra-low latency cutoffs.  
-   * Power-Loss Magnetic/Mechanical Latching and Power-Restoration Auto-Restart Lockout — Employs electro-permanent magnetic (EPM) or mechanical brake latches to arrest gravity free-fall within 0.1ms during power cuts, retaining RECOVERY state upon power restoration to prevent unauthorized auto-restarts and unintended strokes (integrated with soma-moa power survival).  
-   * 5mm Proximity Bending Exception-Handling Safety Assist — Avoids blanket shutdowns when operating within 5mm of the V-die, allowing continuous operation when 3-sensor fusion verifies safe holding postures while triggering immediate stops and upward recovery if posture deteriorates.  
-   * Die Profile & Gap Dynamic Risk Weighting for Alarm Fatigue Mitigation — Dynamically weights hazard scores based on punch/die geometry and stroke gaps aligned with ANSI B11.3 and ISO 12100, suppressing nuisance trips when body parts are in safe clearance zones to encourage permanent safeguard activation.  
-   * Dual Operating Mode Governance (Normal Safety Mode vs. Special-Purpose Tooling Mode) — Separates strict perimeter shutdown controls for standard jobs from UWB/physical-key authenticated special tooling modes for complex geometries, fine shearing under 10mm, or close-proximity bending, maintaining both efficiency and safety.  
-   * Worker Assistance & Minimal PII 10s Purge Logging under soma-moa Charter #0 — Reinterprets Heinrich's 1931 philosophy through Safety-II (assisting 9,999 normal operational continuities) and Just Culture (purging PII in RAM within 10 seconds), preserving only anonymous physical delta logs.  
-   * 60GHz FMCW Radar Scattering Angle Differentiation — Distinguishes 0-degree specular metallic reflections from 30–40 degree human body scattering angles in real time to reduce false alarms.  
-   * 32x24 Thermal Array Matrix and SCL Capacitive Copper Fusion — Fuses thermal variance (human 36°C vs. sheet metal 20°C) with copper capacitive shift detection to eliminate sensor blind spots.
-
----
-
-## 1. Structural Limitations, Failure Modes, and Operational Risks of Pinch Hazard Machinery
-
-* **KOSHA & OSHA Official Machine Classifications** — Power presses, shearing machines, forming presses, and press brakes are officially designated as high-risk pinch point and Point of Operation hazard machinery requiring strict physical and electrical safeguards under ANSI B11.3 and OSHA 1910.212/217.  
-* **Real-World Failure Mode 1: Nuisance Trips, Manual Bypass, and Fine Shearing Accidents** — Traditional optical guards frequently trigger false trips during non-standard tooling or fine shearing under 10mm. This leads operators to physically bypass or tape over optical sensors, resulting in severe finger amputation hazards when the machine cycles unexpectedly.  
-* **Real-World Failure Mode 2: Power-Loss Free-Fall and Auto-Restart Entrapment** — Sudden power interruptions cause loss of hydraulic holding pressure, allowing heavy upper rams to free-fall. Furthermore, automatic controller restarts upon power restoration pose severe entrapment risks to workers inspecting die gaps.  
-* **Real-World Failure Mode 3: Night Shift Fatigue, Cumulative Impact, and Entrapment** — Prolonged exposure to heavy mechanical shocks and fatigue during extended or night shifts reduces worker alertness, leading to entrapment when workers attempt to clear jammed workpieces without shutting down power.  
-* **Operational Side-Effect Mitigation & Modern Governance** — Operating as a silent auxiliary rather than a surveillance tool, the system reinterprets Heinrich's ratio through Safety-II and Just Culture principles. It focuses on supporting 9,999 normal operational cycles, reducing worker resistance and preventing intentional safeguard disablement.  
-* **Institutional Liability & Legacy Facility Limitations** — While expanded strict liability laws necessitate urgent entrapment prevention, most facilities face substantial financial and operational risks when forced to replace legacy machinery or overhaul main PLC logic.
+3. **Summary of Top 10 Core Mechanisms and Prior Art Fork Points:**  
+   * 5mm Offset Auxiliary Finger Physical Structure — Encompasses a lightweight structure (150/80mm specification with 1.5T built-in spring) that simultaneously supports and pushes away within 5mm of the V-die, physically mitigating access to the pinch point in compliance with ISO 13857 and ISO 13854.  
+   * Mute Point-Linked Decelerated Descent, Ultra-Low Latency Stop, and Immediate Upward Recovery Logic — Encompasses configurations linked to EN 12622 (Safe Speed ≤ 10mm/s and Mute Point profiles) to prevent mechanism offset during upward recovery via inertia/hydraulic shock and bounce suppression, while preventing worker startle reflexes and musculoskeletal occupational diseases. It induces 0.1ms eFPGA cutoff control and immediate upward recovery to the safety height (origin) upon detecting anomalies.  
+   * Constant Quiet Assist Logic During Manual Processing (≤10mm) and Safeguard Bypass/Mute — Encompasses configurations performing continuous monitoring and ultra-low latency cutoff as a 'last line of quiet assist' via independent triple sensors and eFPGA hardware interlocks, even when existing optical sensors are physically bypassed for small micro-parts cutting.  
+   * Non-Powered Magnetic/Mechanical Latch Against Sudden Power Outage and Auto-Restart Prohibition Logic — Encompasses soma-moa emergency power survival configurations that physically attenuate and fix the upper blade's free-fall (due to hydraulic/power loss) within 0.1ms via non-powered electromagnetic (EPM) or mechanical latches during sudden outages, maintaining the latch state (`RECOVERY`) upon power restoration to prevent unauthorized auto-restarts and unexpected strokes.  
+   * 5mm Close-Proximity Bending Exception Handling Safety Assist — Encompasses configurations that avoid unconditional blanket cutoffs upon entering the 5mm V-die zone, maintaining operation if a safe posture is identified via triple sensors, but executing immediate stop and upward recovery if the posture deviates.  
+   * Alarm Fatigue Prevention via Blade/Die Profile-Linked Risk Evaluation — Encompasses dynamic weighting configurations based on ANSI B11.3 and ISO 12100 that suppress unnecessary nuisance trips when the body is in a fixed safe clearance position not crossing the substantial pinch line given the mold profile and stroke gap, thereby encouraging the safety device to remain constantly active.  
+   * Dual Operation Control Governance (Normal Safety Mode vs. Special-Purpose Tooling Mode) — Encompasses configurations separating strict safeguard modes for standard operations and UWB/physical key-authenticated special-purpose profile modes to simultaneously secure operational efficiency and protective reliability.  
+   * Worker Assist & Minimal Logging Based on soma-moa Modern Reinterpretation Safety Framework — Encompasses configurations linked to the soma-moa Charter 0, modernizing Heinrich's philosophy (1931) with Safety-II (assisting 9,999 normal operation continuities) and Just Culture (PII 10-second destruction, RAM 3.2KB) to preserve only anonymous physical delta data without surveillance noise.  
+   * Triple Sensor Fusion (60GHz FMCW Multiple Reflection Angle Distinction, 32x24 Thermal Matrix, SCL Copper Foil Capacitance) — Encompasses configurations compensating for blind spots by simultaneously distinguishing metal 0-degree reflections from human 30-40 degree scattering angles, detecting 36-degree vs. 20-degree thermal deviations, and sensing micro capacitance changes.  
+   * Triple AND + eFPGA Ultra-Low Latency Motor Stop Control & T-Reg 15% Performance Degradation — Encompasses configurations satisfying IEC 61508 and IEC 62061 functional safety (SIL/PL) metrics by cross-verifying sensor signals and AI inferences via logic gates and eFPGA, stopping motor drive control at 0.1ms speeds and restricting output to 15%.
 
 ---
 
-## 2. Necessity of Edge/On-Device Local Computation and Local Physical Interlocks
+## 1. Structural Limits of Press/Shear Pinch Hazards, Real Failure Modes, and Operational Risk Analysis
 
-* **Non-Invasive Silent Auxiliary and Unused Slot Interlocking (IEC 60204-1)** — Designed to avoid modifying main PLC logic or proprietary firmware, the system connects non-invasively via unused safety option terminals (X3/X4 slots), OSSD photocoupler tapping, or dry contacts in emergency stop loops.  
-* **Independent Operation during Safeguard Bypass/Muting** — Even when main optical guards are muted or manually bypassed for special tooling or fine shearing, this independent edge module operates autonomously to maintain physical interlock protection.  
-* **Ultra-Low Latency Hardware Interlock and Local AI Fusion (IEC 61508/62061)** — Evaluates sensor signals and AI inferences at local eFPGA hardware levels without cloud or network dependencies, achieving sub-millisecond execution.  
-* **Power-Loss Mechanical Latching and Power Lockout (soma-moa L0/L1)** — Activates stored-energy mechanical/magnetic latches upon main power failure to arrest ram free-fall. Holds FSM RECOVERY state upon power restoration, requiring manual re-authentication before motion can resume.  
-* **Multi-Sensor Fusion & Multimodal Noise Reduction** — Combines 60GHz FMCW radar, 32x24 thermal imaging, capacitive sensing, and local AI audio/vision analysis to reliably distinguish workpieces from human appendages.  
-* **Air-Gapped Offline Autonomous Assurance** — Functions entirely offline, ensuring complete safety assistance even during total network or communication infrastructure failure.
-
----
-
-## 3. 5mm Offset Auxiliary Finger, Immediate Upward Recovery, and Quiet Assist Control Mechanism
-
-* **5mm Offset Auxiliary Finger Physical Structure** — Deploys 1.5T spring-loaded 150/80mm fingers within 5mm of the V-die, providing physical support and push-away buffering compliant with ISO 13857 and ISO 13854.  
-* **10mm Manual Fine-Shearing Quiet Assist** — Tracks operator fingers during small-piece cutting or residual trimming down to 10mm. If fingers breach the Point of Operation, eFPGA motor shutdown and immediate upward ram recovery trigger within 0.1ms.  
-* **Smooth Slow Descent, Ultra-Low Latency Stop, and Immediate Upward Recovery** — Synchronizes with EN 12622 Safe Speed (<=10mm/s) and Mute Point profiles to initiate ultra-low latency stops and immediate upward recovery upon hazard detection.  
-  * **Physical Cushioning:** Decelerated descent below Mute Point reduces kinetic impact energy by 1/400 ($E_k = \frac{1}{2}mv^2$), eliminating mechanical bounce and hydraulic pressure surges to ensure immediate upward ram reversal without motor jamming.  
-  * **Psychological Cushioning:** Predictable descent speeds suppress operator startle reflexes, preventing erratic panic movements.  
-  * **Ergonomic Cushioning (Occupational Disease Prevention):** Dampens repetitive shock and vibration transmission to operators during long shifts, mitigating long-term musculoskeletal disorders.  
-* **5mm Proximity Bending Exception Handling** — Evaluates hand postures via 3-sensor fusion during close-proximity bending, maintaining continuous operation for safe postures while triggering instant stops and recovery upon posture breakdown.  
-* **Die Profile & Clearance Dynamic Risk Weighting** — Recognizes punch/die profiles (gooseneck, offset) and stroke gaps, adjusting risk thresholds to suppress false trips when hands are in non-hazardous clearance zones.  
-* **Dual Operating Mode Governance** — Features Normal Safety Mode for standard bending and Special-Purpose Tooling Mode for complex dies or fine shearing, authenticated via UWB tags or physical keys.  
-* **soma-moa Charter #0 & Safety-II / Just Culture Integration** — Adheres to the principle that system governance is primary while human work remains central. Purges raw data within 10 seconds (3.2KB RAM buffer) and utilizes silent haptic wristband alerts (1 pulse for caution, 2 for stop) to minimize alarm fatigue.  
-* **Fail-Safe Default & Risk Assessment Pre-Conditions** — Retains strict Fail-Safe operation as default. Special tooling modes and exception weightings require prior risk assessment validation aligned with ISO 13849/16092 and ANSI B11.19.
+* **Official Pinch Point Machinery Classification** — Presses, shears, forming machines, and press brakes are designated as representative high-load pinch point and Point of Operation hazard machines, strictly requiring physical and electrical safeguards complying with ANSI B11.3 and OSHA 1910.212/217.
+* **Real Failure Mode 1: Accidents During Manual Processing After Temporary Optical Sensor Bypass** — When cutting micro-remnants under 10mm, conventional optical sensors often misjudge safe fingers as hazards, causing nuisance trips. This leads workers to physically bypass or mask the sensors, resulting in severe amputation accidents when the blade operates unexpectedly.
+* **Real Failure Mode 2: Free Fall During Sudden Outages and Auto-Restart Malfunctions** — Momentary power outages can cause hydraulic pressure loss, leading the upper die to free-fall under its own weight. Furthermore, auto-restart settings upon power restoration have caused severe accidents while workers were cleaning or inspecting between molds.
+* **Real Failure Mode 3: Entanglement Due to Night-Shift Fatigue and Long-Term Vibration** — Strong mechanical shocks and vibrations over long hours cause musculoskeletal fatigue and loss of concentration, frequently leading to entanglement accidents when workers attempt to clear jammed parts without cutting power.
+* **Modern Safety Governance Application** — This system operates as a Silent Auxiliary, not a surveillance tool, assisting safe operation. It applies Safety-II and Just Culture to flexibly supplement 9,999 normal operations, mitigating the risk of safety device neutralization caused by field surveillance backlash.
 
 ---
 
-## 4. Physical Constraints, Ultra-Low Latency Motor Stop, and T-Reg Governance
+## 2. Necessity of On-Device/Edge Computation and Local Physical Control
 
-* **eFPGA Hardware-Level Motor Stop Control** — Bypasses software OS layers to directly control motor enable lines at the hardware circuit level, achieving 0.1ms execution speeds.  
-* **T-Reg 15% Fail-PRELOCK Mode** — Restricts motor drive output to 15% power when entering hazard boundary zones or operating under special tooling modes to reduce impact forces.  
-* **HORIZONTAL_HANDOVER and 80% Early PRELOCK** — Manages horizontal transition across multi-zone operations, triggering early PRELOCK at 80% risk thresholds.  
-* **Anonymous Logging & 10s PII Purge** — Strips personally identifiable information, generating anonymous CBOR logs while permanently purging raw memory buffers within 10 seconds.
-
----
-
-## 5. Industrial Field Segments and Horizontal Deployment References
-
-* **Power Press & Shearing Manufacturing Lines** — Retrofits heavy plate shearing and press lines via external bridge modules housing auxiliary fingers and 3-sensor edge units.  
-* **Small Press Brakes, Fine Shearing & Legacy Manual Machinery** — Installs non-invasively on manual or legacy press brakes without altering core machinery, assisting operators through T-Reg power degradation and low-latency stops.  
-* **Smart Factory Integration** — Transmits anonymous safety event logs to central MES/S3 dashboards for facility-wide risk management.
+* **Non-Invasive Silent Auxiliary and Unused Terminal Integration** — In accordance with the IEC 60204-1 open standard, this lightweight independent module aims for a non-invasive structure by directly connecting to unused safety option terminals (X3/X4 slots), sniffing existing OSSD photocouplers, or inserting dry contacts in series within the emergency relay loop to flexibly control the motor EN/Relay only during emergencies.
+* **Independent Safety Assist Guarantee During Safeguard Bypass/Mute** — Even if the main optical sensor or interlock guard is manually bypassed or auto-muted for special processes, this module operates independently of the main PLC, continuously performing cutoff control via triple sensor fusion and eFPGA interlocks upon detecting physical hazard entry.
+* **Ultra-Low Latency Hardware Interlocks & Local AI Fusion** — Cross-verifies sensor signals and AI inference within local eFPGA circuits and lightweight NPU terminals to maximize physical execution speed without relying on upper clouds (Targeting IEC 61508/62061 functional safety).
+* **Power-Lockout Governance (soma-moa L0/L1)** — EPM or mechanical air brake latches immediately actuate during power loss to physically arrest die free-fall. Upon power restoration, the soma-moa L2 FSM `RECOVERY` latch state is maintained, strictly prohibiting arbitrary machine restart without manual worker authentication (Power Lockout).
+* **Air-Gap & Offline Autonomous Operation** — Driven by independent power and local compute units, fully maintaining safety auxiliary functions even in communication dead zones or network failure environments.
 
 ---
 
-## 6. Invariance over Communication, Sensing Media, Tooling Scale, and Material Thickness
+## 3. 5mm Offset Auxiliary Finger, Immediate Upward Recovery, and Quiet Assist Control Mechanisms
 
-* **Protocol-Agnostic Independent Operation** — Operates independently of wired/wireless networks, Wi-Fi, Bluetooth, or Ethernet protocols using dedicated internal sensor buses and eFPGA logic.  
-* **Local AI Model & Sensing Media Invariance** — Accommodates lightweight VLM, CNN object detection, audio anomaly detection, or sLLM models across diverse physical media (radar, thermal, capacitive, optical).  
-* **Tooling Scale, Material Thickness, and Cutting Dimension Invariance** — The core safety assistance mechanisms remain fully applicable regardless of variations in die dimensions, stroke depth, sheet metal thickness, or small cutting dimensions under 10mm.
+* **5mm Offset Auxiliary Finger Structure** — Deploys an auxiliary finger utilizing 1.5T spring elasticity within the 5mm V-die zone, complementing ISO 13857 and ISO 13854 clearance standards, physically supporting and pushing away body parts to mitigate direct entry paths into the hazardous mold zone.
+* **Quiet Assist During 10mm Manual Micro-Processing and Safeguard Bypass** — Even when existing safeguards are bypassed, this system links with the Special-Purpose Tooling Mode. The triple sensors and lightweight AI track the distance between the worker's finger and the material at the millimeter level, triggering the 0.1ms eFPGA motor stop and immediate upward recovery *only* when a finger directly enters the Point of Operation, satisfying both process continuity and safety.
+* **Mute Point Decelerated Descent, Ultra-Low Latency Stop, and Immediate Upward Recovery Logic** — Linked to EN 12622 (Safe Speed ≤ 10mm/s & Mute Point) and ISO 13855 approach speed formulas, it blocks motor drive via triple AND + eFPGA at 0.1ms upon detecting hazard signs during the decelerated descent phase. It immediately ramps up the upper die to a set safety height (origin or release height), fundamentally mitigating secondary pinch accidents caused by pressure inertia.
+  * **Physical Buffer:** Decelerated descent below the Mute Point and T-Reg 15% limitation absorb inertia/hydraulic shock (kinetic energy attenuated by 1/400) and micro-bounce, preventing motor/hydraulic jams during sudden stops and securing upward recovery drive.
+  * **Psychological Buffer:** Suppresses worker startle reflexes with predictable descent speeds.
+  * **Ergonomic Buffer:** Flexibly attenuates long-term mechanical shocks and vibrations, preventing musculoskeletal occupational diseases.
+* **5mm Close-Proximity Bending Exception Handling** — Eschews blanket cutoffs upon entering the 5mm V-die zone. The triple sensors determine in real-time whether the worker's hand posture is safe (side support, push-away posture). If safe, operation continues; if the posture collapses, immediate stop and upward recovery are executed.
+* **Alarm Fatigue Mitigation & Profile-Linked Dynamic Risk Weighting** — Adhering to ANSI B11.3, it assesses risk by recognizing punch/die profiles (gooseneck, offset blades), clearance, and stroke range. By suppressing nuisance trips when the body is safely anchored outside the substantial pinch line, it encourages the safety device to remain constantly active (ON).
+* **Dual Operation Control Governance**
+  * **Normal Safety Mode:** Activated during standard flat iron and right-angle bending, performing strict physical protection via triple sensor fusion and eFPGA interlocks.
+  * **Special-Purpose Tooling Mode:** Activated for non-standard molds, 10mm manual cuts, and 5mm close-proximity bending. Accessible only via UWB smart tag/security watch or physical key authentication, applying comprehensive exception handling and Quiet Assist.
+* **soma-moa Charter 0 & Modern Reinterpretation Safety Framework (Safety-II & Just Culture)**
+  * **Safety-II Resilience:** Focuses on assisting 9,999 normal operation continuities on-site, rather than merely suppressing accidents.
+  * **Just Culture & PII 10-Second Destruction:** Routine operation and minor error logs are permanently destroyed from the volatile buffer (RAM 3.2KB) within 10 seconds to prevent surveillance backlash. Only critical hazard delta logs are saved locally in anonymous CBOR format.
+  * **Quiet Haptic Alerts:** Utilizes security watch haptic notifications (1 vibration: caution / 2 vibrations: stop) recognizable only by the worker, minimizing fatigue from public noise alarms.
+* **Fail-Safe Default & Risk Assessment Condition** — The default state maintains strict Fail-Safe protection. Special modes are governed to activate only after third-party verification, certified risk assessments, or strict administrator parameter approvals complying with ISO 13849/16092 and ANSI B11.19.
 
 ---
 
-## 7. Practical Protection & License Separation
+## 4. Physical Constraint Overcoming, Ultra-Low Latency Motor Stop, and T-Reg Governance
 
-* **Original Authority Principle:** The supreme legal and technical authority of this specification belongs to the original Korean text (`README.ko.md`). This file (`README.md`) serves solely as an auxiliary reference. In case of any discrepancy, the Korean text shall prevail.  
-* **Dual Licensing Framework:** Creative Commons Attribution 4.0 International (**CC BY 4.0**) applies to text and visual expressions. The **Defensive Patent License v1.0 (DPL v1.0)** applies independently to technical ideas, architectural structures, and patent immunity claims.  
-* **Trade Secret & Implementation Separation:** This document publishes high-level architectural concepts for prior art establishment. Precise field calibration parameters, eFPGA RTL source code, CAD schematics, and binary firmware are retained as protected Trade Secrets.  
-* **Directional Guidance & No Implementation Warranty:** This specification provides conceptual architectural guidance for defensive prior art publication and does not guarantee commercial implementation or turn-key operation without site-specific engineering and safety validation.  
-* **Comprehensive Prior Art Scope:** Covers all disclosed concepts including 5mm offset auxiliary fingers, 10mm fine-shearing silent assist during safeguard bypass/muting, scale/thickness invariance, smooth slow descent impact mitigation ($1/400$), occupational disease vibration dampening, ultra-low latency stops, immediate origin recovery, power-loss magnetic latching, auto-restart lockout, die dynamic weighting, dual-mode governance, soma-moa Charter #0 Safety-II/Just Culture integration, 3-sensor fusion, non-invasive dry contact interlocks, eFPGA control, T-Reg 15% degradation, and anonymous logging.  
-* **Design-to-Cost Flexibility & Scaling Declaration:** Disclosed hardware structures represent optimal embodiments. Actual implementations allow selective omission, reduction, scaling, or custom optimization of specific modules based on market cost targets and field requirements while remaining within the prior art scope.  
-* **Non-Intentional Omission & Non-Exhaustive Disclaimer:** Standards and codes cited herein serve as illustrative references. Any unintentional omission of related standards or equivalent technical principles does not constitute a waiver of prior art coverage over equivalent combinations.  
-* **Defensive Publication & Prior Commercial Use Rights:** Primary publication establishes prior art under Korean Patent Act Art. 103 and US Patent Code 35 U.S.C. §273, supported by offline engineering records.  
-* **Business Execution Plan Separation:** This open-source specification excludes commercial business plans, which are maintained in separate execution documents.
+* **eFPGA-Based Ultra-Low Latency Motor Stop Control** — Directly controls the motor enable signal at the hardware circuit level without passing through software threads, inducing machine stop at 0.1ms speeds upon hazard detection.
+* **T-Reg 15% Fail-PRELOCK Mode** — Forcibly degrades machine output to 15% upon entering sensor warning zones or during special-purpose modes to attenuate shocks from sudden operations.
+* **HORIZONTAL_HANDOVER & 80% Pre-emptive Prelock** — Executes horizontal handover when moving between multiple work zones, triggering a pre-emptive prelock at 80% of the hazard threshold to suppress risk spread.
+* **Anonymous Logging & PII 10-Second Destruction** — Generates anonymized logs in CBOR format excluding PII, permanently destroying raw data within 10 seconds of recording to maintain security.
+
+---
+
+## 5. Industrial Segment Applications & Horizontal Deployment References
+
+* **Press & Shear Manufacturing Lines** — Applied as an external bridge-type module equipped with auxiliary fingers and triple sensors to prevent finger pinch accidents in large sheet metal cutting and press forming.
+* **Small Bending Machines & Legacy Equipment** — Non-invasively attaches lightweight edge AI terminals and eFPGA modules without modifying existing equipment, assisting 10mm manual cutting and fatigue-related malfunction risks via T-Reg degradation and ultra-low latency motor stops.
+* **Smart Factory Safety Integration** — Securely transfers anonymized safety cutoff and prevention logs processed at the terminal to the company's central management system (MES/S3).
+
+---
+
+## 6. Communication, Transport, Scale, and Material Thickness Agnostic Scope
+
+* **Protocol-Agnostic Independent Operation** — Completes safety control solely with internal sensor circuits and eFPGA hardware logic, regardless of wireline/wireless networks, Wi-Fi, Bluetooth, or Ethernet availability.
+* **Local AI Model & Sensor Media Agnosticism** — The local AI accommodates any neural network structure (VLM, CNN, audio anomaly detection, sLLM), and sensors broadly include next-gen radar, high-res thermal, and new material capacitive sensors.
+* **Thickness & Scale Invariance** — Regardless of the overall size of press molds, bending blades/dies, shearing blades, stroke depth, sheet thickness, or geometric variations like 10mm micro manual cutting, the fundamental safety control mechanisms (triple sensor fusion, 5mm offset finger, independent assist during bypass, eFPGA 0.1ms stop, and upward recovery) apply validly and comprehensively.
+
+---
+
+## 7. Practical Protection, License Separation & Liability Disclaimer
+
+* **Original Authority Rule:** The legal and technical interpretation of this specification prioritizes the Korean original (`README.ko.md`). Translations serve only for reference.
+* **License Dual-Application:** Text copyright is licensed under **CC BY 4.0**, while technical concepts, architecture structures, defensive patent claims, and cross-licensing rights are independently licensed under **DPL v1.0**.
+* **Trade Secret Separation:** This public white paper aims to disclose high-level architectural concepts. Actual calibration parameters, eFPGA RTL schematics, precise CAD files, and mass-production firmware binaries are kept separately as Trade Secrets. PoC reference codes are stored offline.
+* **Architect's Recommendation & Mandatory Safety Certification:**  
+  This white paper is an engineering conception formulated by the designer (deundeuni) to prevent accidents in high-difficulty metalworking sites. The designer strongly recommends that all subsequent developers and businesses intending to manufacture or implement actual devices based on this architecture strictly obtain mandatory legal safety certifications (KCs, CE, UL, OSHA, etc.) for safe commercialization. However, as this white paper is a conceptual technical disclosure and not a certified end-product, the obligations for legal safety certification, risk assessment, and functional safety (SIL/PL) verification during the implementation process belong entirely to the 'actual implementing and operating entity'.
+* **Directional Guidance & AS-IS Non-Liability Disclaimer:**  
+  This white paper serves solely for prior art defensive publication and directional guidance. It does not directly guarantee physical completeness, prototype operation, or commercial deployment (provided "AS-IS"). The author and designer (deundeuni) shall not bear any legal liability (civil or criminal) for unexpected physical injuries, property losses, or legal penalties resulting from devices manufactured or operated using the logic disclosed herein. All engineering verification and safety liabilities upon field application rest entirely with the implementing and operating entities.
+* **Scope Inclusion:** All high-level concepts described herein—including the 5mm offset auxiliary finger, continuous Quiet Assist during safeguard bypass, scale/thickness invariance, Mute Point decelerated descent (inertia attenuation/startle suppression/occupational disease prevention) and immediate upward recovery logic, power-lockout/latch logic during outages, 5mm close-proximity exception handling, profile-linked risk weighting for alarm fatigue, dual operation modes, soma-moa Charter 0 (Safety-II/Just Culture) PII destruction logging, triple sensor fusion, non-invasive local AI agents, eFPGA motor control, T-Reg 15%, HORIZONTAL_HANDOVER, UWB authentication, and unused terminal integration—are broadly embraced as prior art.
+* **Design-to-Cost Flexibility:** Hardware configurations and layer structures represent optimal embodiments. Depending on market demand, economy, and operating conditions, selective omission, scaling, or custom optimization of specific modules is flexibly permitted and falls within the scope of this prior art disclosure.
+* **Non-Intentional Omission & Non-Exhaustive Disclaimer:** Cited standards, principles, and laws are illustrative and not exhaustively limiting. Omissions due to subjective limits do not constitute intentional exclusion. All derivative standards and equivalent combinations linked to the disclosed high-level concepts are deemed included.
+* **Defensive Publication & Prior Commercial Use:** Published primarily as defensive prior art, maintaining offline design logs to establish prior use rights under ROK Patent Act Art. 103 and US 35 U.S.C. §273.
+* **Commercialization Separation:** Commercialization execution plans are managed in separate technical documents.
 
 ---
 
 ## 8. Sources & Records
 
-* **Ecosystem Repositories & DOIs (Title-Kebab-Case Baseline)**  
-  * Master Architecture Hub (`Smart-System-Multi-Survival-Architecture`) — GitHub: `deundeuni / Smart-System-Multi-Survival-Architecture`  
-  * APU Survival Controller (`Chiplet-APU-Multi-System-Survival-Architecture`) — GitHub: `deundeuni / Chiplet-APU-Multi-System-Survival-Architecture` | CERN Zenodo DOI: `10.5281/zenodo.22374987`  
-  * Strategy Specification (`ARCHITECTURE_STRATEGY.md`) — Subscribed within `Chiplet-APU-Multi-System-Survival-Architecture`  
-  * Uninterrupted Power Survival Standard (`POWER_SURVIVAL_SPEC.ko.md`) — soma-moa v1.0 Universal Emergency Power Survival Standard  
-  * Edge/On-Device Compute Paper (`On-Device-Edge-Survival-Paper`) — GitHub: `deundeuni / On-Device-Edge-Survival-Paper`  
-  * Primary Specification Repository (`Press-Brake-Shear-Edge-Safety-Paper`) — GitHub: `deundeuni / Press-Brake-Shear-Edge-Safety-Paper` | Main Files: `README.md` (English Auxiliary) / `README.ko.md` (Korean Original)  
-  * Gateway & Central Hub (`soma-moa`) — GitHub: `deundeuni / soma-moa` | CERN Zenodo DOI: `10.5281/zenodo.22435773` | Domain: `somamoa.ai.kr` | Philosophy Document: `PHILOSOPHY.ko.md` (soma-moa Charter #0, Section 4-4 Safety-II & Just Culture)  
-* **Legal Statutes & Licenses**  
-  * Korean Patent Act Article 103 — Prior Commercial Use Rights  
-  * United States Code 35 U.S.C. §273 — Defense to Infringement Based on Prior Commercial Use  
-  * Text Copyright: Creative Commons Attribution 4.0 International (CC BY 4.0)  
-  * Patent Immunity: Defensive Patent License v1.0 (DPL v1.0)  
-* **Technical Reference Standards & Safety Codes**  
-  * ISO 12100 — Safety of machinery — General principles for design — Risk assessment and risk reduction  
-  * ISO 13849-1 / ISO 13849-2 — Safety of machinery — Safety-related parts of control systems  
-  * ISO 16092-1 / ISO 16092-2 — Machine tools safety — Presses — Mechanical / hydraulic press safety  
-  * IEC 61496-1 / IEC 61496-2 — Safety of machinery — Electro-sensitive protective equipment  
-  * EN 12622:2009+A1:2013 — Safety of machine tools — Hydraulic press brakes (Safe Speed <=10mm/s & Mute Point)  
-  * ANSI B11.3-2022 — Safety Requirements for Power Press Brakes  
-  * ANSI B11.19 / ANSI B11.0 — Performance Criteria for Safeguarding / Safety of Machinery  
-  * ISO 13855:2010 — Positioning of safeguards with respect to approach speeds  
-  * ISO 13857:2019 — Safety distances to prevent hazard zone access by upper/lower limbs  
-  * ISO 14119:2013 / ISO 14120:2015 / ISO 13850:2015 / ISO 13854 — Interlocks, guards, E-stops, and minimum gaps  
-  * IEC 60204-1:2018 — Safety of machinery — Electrical equipment of machines (Unused slot & dry contact interlocks)  
-  * IEC 61508 / IEC 62061 — Functional safety of safety-related electrical/electronic control systems (SIL/PL eFPGA)  
-  * OSHA 1910.212 / OSHA 1910.217 — General Duty & Mechanical Power Presses  
-  * IEEE 446 / NFPA 110 — Emergency and Standby Power Systems  
-  * KOSHA GUIDE — Korean Occupational Safety and Health Agency Press/Shear/Bending Guarding Technical Guidelines  
+* **Ecosystem Repositories & DOIs**
+  * Top-Level Universal Survival Architecture Master Hub (`smart-system-multi-survival-architecture`) — GitHub: `deundeuni / smart-system-multi-survival-architecture`
+  * High-Level Universal Survival Architecture & APU Computational Controller (`chiplet-apu-multi-system-survival-architecture`) — GitHub: `deundeuni / chiplet-apu-multi-system-survival-architecture` | CERN Zenodo DOI: `10.5281/zenodo.22374987`
+  * High-Level Architecture Strategy Specification (`ARCHITECTURE_STRATEGY.md`) — Included in `chiplet-apu-multi-system-survival-architecture`
+  * Full-Stack Zero-Downtime Emergency Power Survival Architecture White Paper (`POWER_SURVIVAL_SPEC.ko.md`) — soma-moa v1.0 Universal Emergency Power Survival Standard
+  * On-Device Edge Autonomous Computation White Paper (`On-Device-Edge-Survival-Paper`) — GitHub: `deundeuni / On-Device-Edge-Survival-Paper`
+  * Dedicated Repository for this White Paper (`Press-Brake-Shear-Edge-Safety-Paper`) — GitHub: `deundeuni / Press-Brake-Shear-Edge-Safety-Paper` | Main Files: `README.md` (English Aux) / `README.ko.md` (Korean Original)
+  * Top-Level Hub Gateway & Main Repository (`soma-moa`) — GitHub: `deundeuni / soma-moa` | CERN Zenodo DOI: `10.5281/zenodo.22435773` | Domain: `somamoa.ai.kr` | Core Philosophy: `PHILOSOPHY.ko.md` (soma-moa Charter 0, Ch 4-4 Heinrich 1931 Reinterpretation & Safety-II / Just Culture / Quiet Assist)
+* **Legal Statutes & Licenses**
+  * ROK Patent Act Article 103 — Non-exclusive license based on prior use
+  * US Patent Law 35 U.S.C. §273 — Defense to Infringement Based on Prior Commercial Use
+  * Document Copyright: Creative Commons Attribution 4.0 International (CC BY 4.0)
+  * Patent Defense & Practice License: Defensive Patent License v1.0 (DPL v1.0)
+* **Technical Reference Standards & Safety Codes**
+  * ISO 12100 — Safety of machinery — General principles for design — Risk assessment and risk reduction
+  * ISO 13849-1 / ISO 13849-2 — Safety of machinery — Safety-related parts of control systems
+  * ISO 16092-1 / ISO 16092-2 — Machine tools safety — Presses — Safety requirement for mechanical / hydraulic presses
+  * IEC 61496-1 / IEC 61496-2 — Safety of machinery — Electro-sensitive protective equipment
+  * EN 12622:2009+A1:2013 — Safety of machine tools — Hydraulic press brakes (Basis for Safe Speed ≤ 10mm/s & Mute Point settings)
+  * ANSI B11.3-2022 — Safety Requirements for Power Press Brakes (US technical standard for Point of Operation guarding)
+  * ANSI B11.19 / ANSI B11.0 — Performance Criteria for Safeguarding / Safety of Machinery
+  * ISO 13855:2010 — Safety of machinery — Positioning of safeguards with respect to the approach speeds of parts of the human body
+  * ISO 13857:2019 — Safety of machinery — Safety distances to prevent hazard zones being reached by upper and lower limbs (Basis for 5mm physical mitigation)
+  * ISO 14119:2013 / ISO 14120:2015 / ISO 13850:2015 / ISO 13854 — Safety interlocks, guard structures, emergency stop, and minimum gaps integration standards
+  * IEC 60204-1:2018 — Safety of machinery — Electrical equipment of machines (Basis for unused X3/X4 slot and dry contact integration)
+  * IEC 61508 / IEC 62061 — Functional safety of electrical/electronic/programmable electronic safety-related systems (SIL/PL functional safety basis for eFPGA logic)
+  * OSHA 1910.212 / OSHA 1910.217 — Machinery and Machine Guarding / Mechanical Power Presses
+  * IEEE 446 / NFPA 110 — Emergency and Standby Power Systems for Industrial Applications
+  * KOSHA GUIDE — Technical guidelines for preventing pinch point accidents in presses, shears, and bending machines.
 
 ---
 
 ## Appendix A. Revision History
 
-* **v1.0 (2026-09-20):** Initial Release — Unified Specification for Near-Proximity Safety System and Local AI Edge Autonomous Survival Architecture (`v1.0 Core Baseline`)
+* **v1.2 (2026-09-20):** Softened liability disclaimer tone (AS-IS basis) and reverted master hub repository naming to lowercase kebab-case (`v1.2 Core Baseline`)
+* **v1.1 (2026-09-20):** Added commercialization recommendation, reinforced mandatory legal safety certification compliance, and clarified absolute liability disclaimer
+* **v1.0 (2026-09-20):** Initial Release — Integration of Pinch-Point Machinery Proximity Safety System and Local AI Edge Autonomous Survival Control Architecture
