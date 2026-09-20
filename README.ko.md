@@ -1,6 +1,6 @@
 > **원본 권위 고지:** 본 기술 명세의 최상위 법적·공학적 권위는 한글 원본(`README.ko.md`)에 있습니다. `README.md`는 보조 영문 참고본입니다. 불일치 시 한글 원본이 우선합니다.
 
-# Press-Brake-Shear-Edge-Safety-Paper — 프레스·절곡기·절단기 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 (v1.0 Core Baseline)
+# Press-Brake-Shear-Edge-Safety-Paper — 프레스·절곡기·절단기 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 (v1.2 Core Baseline)
 
 > 본 안전보조시스템이 이동 운송장치뿐만 아니라 산업현장 전반에 뿌리내려, 판금의 꽃이라 불리는 고난도 가공 현장에서 한 명이라도 덜 다치게 하기를 바란다. 구형 설비라 하더라도 안전은 양보할 수 없다는 원칙 하에, 설비 교체를 강요하는 것이 아니라 각 회사가 오랜 기간 숙련해 온 고유한 시스템의 구동을 최대한 안전하게 보조함을 목적으로 한다. 특정 기업의 신형으로 교체를 전제하지 않으므로 기존 체계와 공존하며, 가벼운 구조와 초저지연 실행에 초점을 두었다.  
 > 본 백서는 특정 기업이나 브랜드에 종속되지 않는 범용 생존 아키텍처를 기반으로 작성되었으며, 작업자 감시가 아닌 안전 작업 환경 토대를 보조 조성하는 것을 최우선 목표로 삼았습니다. EN 12622(완속 10mm/s Safe Speed 및 Mute Point 연동) 및 ISO 13857/13854(신체 도달 방지 및 최소 간극) 기준에 준하는 5mm 오프셋 보조 핑거, 절단기 10mm 이하 수동·미세 가공 및 기존 방호장치 해제·뮤팅(Bypass/Mute) 시 조용한 보조 상시 가동, 금형·날 크기 및 소재 두께 변형 무관성, 날다이 형상·간격 연동 위험도 가중치 산정, Mute Point 이하 부드러운 감속 하강(관성·유압 충격 $1/400$ 감쇄, 놀람 반사 억제, 장시간 반복 충격·진동에 따른 근골격계 직업병 예방) 연동 초저지연 정지 및 안전 높이(원점) 즉시 상향 복구, 급작스러운 정전 및 전원 복귀 대응 무전원 기구/자력 낙하 방지 및 자동재기동 불허(soma-moa 비상전력 생존 연동), IEC 60204-1 기반 비침습 접점 연동, IEC 61508/62061 기능 안전 지향 eFPGA 초저지연 제어, soma-moa 현대적 재해석 안전 프레임워크(Safety-II 정상 가동 보조 & Just Culture 기반 PII 10초 파기 최소 로깅) 연동 조용한 보조(Quiet Assist), 3중 센서 융합(60GHz FMCW, 열화상, 정전용량), 비전·열화상·이상음향 경량 로컬 AI 분석 에이전트, T-Reg 15% 성능 저하 모드 및 UWB 스마트태그 연동 제어를 통합·정립하였습니다. 텍스트 저작권에는 CC BY 4.0, 파생되는 기술 청구 및 실시권에는 DPL v1.0(Defensive Patent License v1.0)을 이원화 적용합니다.
@@ -97,12 +97,15 @@
 
 ---
 
-## 7. 실리보호 및 법적 적용 범위 이원화 (Practical Protection & License Separation)
+## 7. 실리보호, 법적 적용 범위 이원화 및 면책 고지 (Practical Protection, License Separation & Liability Disclaimer)
 
 * **원안 우선 원칙:** 본 명세서의 법적·기술적 해석은 한국어 원본(`README.ko.md`)을 최우선 기준으로 적용하며, 기타 언어 번역본은 참고용으로만 기능한다.
 * **저작권 및 특허 라이선스 이원화 적용:** 본 문서 텍스트 표현물 및 시각 자료의 저작권에는 **CC BY 4.0**이 적용되며, 본 문서에 기술된 기술적 사상, 아키텍처 구조, 파생 특허 방어 및 통상실시권 호환성에는 **DPL v1.0 (Defensive Patent License v1.0)**을 독립하여 이원화 적용한다.
 * **영업비밀 보호 및 구현체 분리 명시:** 본 공개 백서는 상위 아키텍처 사상과 개념적 메커니즘 개시를 목적으로 하며, 실제 현장 캘리브레이션 파라미터(임계치), eFPGA RTL 회로 설계도, 정밀 CAD 파일, 양산 펌웨어 바이너리는 영업비밀(Trade Secret)로 별도 비공개 유지한다. 개념 실증용(PoC) 참조 코드는 오프라인 레포지토리 자산으로 독자 분류·보관한다.
-* **개념적 방향성 정의 및 구현 보증 불포함 (Directional Guidance & No Implementation Warranty):** 본 백서에 기술된 아키텍처, 메커니즘 및 도식은 선행기술 방어 공표 및 공학적 방향성 제시(Directional Guidance)를 1차 목적으로 하며, 본 문서 자체로 개별 산업 현장에 대한 실제 구현체 완결성, 시제품 작동 및 commercial 상용화 동작을 직접 보증하는 것은 아니다. 실제 현장 적용 및 장비 장착 시에는 각 가공 설비의 물리적·유압적·전기적 특성에 맞춘 별도의 상세 엔지니어링, 파라미터 캘리브레이션 및 안전 검증 절차가 독자적으로 수행되어야 한다.
+* **설계자의 상용화 권고 및 법적 안전인증 준수 책임 (Architect's Recommendation & Mandatory Safety Certification):**  
+  본 백서는 설계자(deundeuni)가 고난도 가공 현장의 재해를 예방하기 위해 정립한 공학적 구상 및 선행기술 방어 백서이다. 설계자는 본 아키텍처를 바탕으로 실제 장치를 제작·구현하려는 모든 후속 개발자 및 사업자가 해당 국가의 법적 안전인증(대한민국 KCs 의무/자율안전확인신고, CE, UL, OSHA 등)을 엄격히 취득하여 안전하게 상용화할 것을 권장한다. 단, 본 백서 자체는 인증받은 상용 완제품이 아닌 개념적 기술 사상의 개시물이므로, 실제 구현 과정에서의 법적 안전인증 취득, 위험성 평가 및 기능안전(SIL/PL) 검증 의무는 전적으로 '실제 구현 및 운용 주체'에게 귀속된다.
+* **개념적 방향성 정의 및 면책 고지 (Directional Guidance & AS-IS Non-Liability Disclaimer):**  
+  본 백서는 선행기술 방어 공표 및 기술적 방향성 제시(Directional Guidance)를 유일한 목적으로 하며, 현장에 즉각 적용 가능한 물리적 완결성이나 시제품 동작을 직접 보증하지 않는다(AS-IS 제공). 설계자(deundeuni)는 본 문서에 개시된 논리를 원용하여 제작된 장치로 인해 발생할 수 있는 예기치 않은 신체적·재산적 손실에 대해 법적 책임(Liability)을 부담하지 않는다. 실제 현장 적용 시의 모든 공학적 검증과 안전 담보 책임은 해당 시공·운용 주체에게 있다.
 * **범위 포괄성:** 본 문서에 기술된 5mm 오프셋 보조 핑거, 절단기 10mm 이하 수동 가공 및 기존 방호장치 해제·뮤팅(Bypass/Mute) 시 조용한 보조 상시 유지 로직, 금형·날 크기 및 가공 소재 두께 변화 무관성, Mute Point 이하 부드러운 감속 하강(관성·유압 충격 $1/400$ 감쇄, 놀람 반사 억제, 작업자 근골격계 진동·충격 감쇄 직업병 예방) 및 초저지연 정지/원점 상향 복구 로직, 급작스러운 정전 대응 무전원 자력/기구 래치 자유낙하 방지 및 전원 복귀 파워-록아웃 로직, 5mm 근접 절곡 예외 처리, 경보 피로(Alarm Fatigue) 완화를 위한 날다이 형상·간격 연동 위험도 차등 산정, 이원화 운용 모드(Normal Safety Mode vs. Special-Purpose Tooling Mode), soma-moa 0번 헌장 및 현대적 재해석 안전 프레임워크(Safety-II & Just Culture) 기반 작업자 안전 보조와 PII 10초 파기 최소 로깅 로직, 3중 센서 융합(60GHz FMCW, 열화상, 정전용량), 비침습 로컬 AI 보조 에이전트, 3중 AND eFPGA 모터 제어, T-Reg 15% 성능 저하, HORIZONTAL_HANDOVER, UWB 태그 인증, 미사용 안전 단자 직결 연동 및 익명 로깅을 포함한 모든 상위 개념은 광범위한 선행기술 선점을 위한 원용 범위로 포괄 적용된다.
 * **구현 유연성 및 시장 맞춤형 확장 선언 (Design-to-Cost Flexibility):** 본 명세서의 하드웨어 구성 및 레이어 구조는 최적 성능을 발휘하는 일 실시예를 예시한 것이다. 실제 양산 및 현장 적용 환경에서는 시장의 수요, 목적, 경제성, 가공 소재 두께 및 운용 조건에 따라 특정 모듈의 선택적 생략, 축소, 스케일링 또는 커스텀 최적화가 유연하게 가능하며, 이러한 기능적 변형 및 등가 구현 역시 본 선행기술 공개 범주에 포괄 적용된다.
 * **비의도적 생략 및 예시적 미한정 고지 (Non-Intentional Omission & Non-Exhaustive Disclaimer):** 본 명세서에 인용되거나 열거된 기술 표준, 공지 원리, 법령 및 관련 규격은 이해를 돕기 위한 예시적 서술이며 전면적·고착적 한정을 의미하지 않습니다. 작성자의 주관적 한계나 인지적 착오로 인해 특정 세부 규격, 관련 산업 표준, 후속 개정안 또는 균등 선행기술의 명시가 누락되거나 누적 생략되었을 수 있으나, 이는 의도적인 은폐나 배척이 아닙니다. 개시된 상위 기술 사상과 연결되는 모든 파생 표준, 개정 규격, 균등 기구 및 공지기술 조합은 본 방어적 공개 백서의 선행기술 포괄 범주에 포함된 것으로 간주합니다.
@@ -113,14 +116,14 @@
 
 ## 8. 출처 및 기록 (Sources & Records)
 
-* **소마모아 생태계 저장소 및 학술 식별자 (Ecosystem Repositories & DOIs — Title-Kebab-Case Baseline)**
-  * 최상위 범용 생존 아키텍처 마스터 허브 (`Smart-System-Multi-Survival-Architecture`) — GitHub: `deundeuni / Smart-System-Multi-Survival-Architecture`
-  * 상위 범용 생존 아키텍처 & APU 연산 제어기 (`Chiplet-APU-Multi-System-Survival-Architecture`) — GitHub: `deundeuni / Chiplet-APU-Multi-System-Survival-Architecture` | CERN Zenodo DOI: `10.5281/zenodo.22374987` (https://doi.org/10.5281/zenodo.22374987)
-  * 상위 아키텍처 전략 명세 (`ARCHITECTURE_STRATEGY.md`) — GitHub: `deundeuni / Chiplet-APU-Multi-System-Survival-Architecture` 저장소 내 수록
+* **소마모아 생태계 저장소 및 학술 식별자 (Ecosystem Repositories & DOIs)**
+  * 최상위 범용 생존 아키텍처 마스터 허브 (`smart-system-multi-survival-architecture`) — GitHub: `deundeuni / smart-system-multi-survival-architecture`
+  * 상위 범용 생존 아키텍처 & APU 연산 제어기 (`chiplet-apu-multi-system-survival-architecture`) — GitHub: `deundeuni / chiplet-apu-multi-system-survival-architecture` | CERN Zenodo DOI: `10.5281/zenodo.22374987`
+  * 상위 아키텍처 전략 명세 (`ARCHITECTURE_STRATEGY.md`) — GitHub: `deundeuni / chiplet-apu-multi-system-survival-architecture` 저장소 내 수록
   * 풀스택 무중단 비상전력 생존 아키텍처 백서 (`POWER_SURVIVAL_SPEC.ko.md`) — soma-moa v1.0 Universal Emergency Power Survival Standard (L0~L3 전력 연동 및 파워 록아웃)
   * 엣지·온디바이스 자율 연산 백서 (`On-Device-Edge-Survival-Paper`) — GitHub: `deundeuni / On-Device-Edge-Survival-Paper`
   * 본 백서 전용 독립 저장소 (`Press-Brake-Shear-Edge-Safety-Paper`) — GitHub: `deundeuni / Press-Brake-Shear-Edge-Safety-Paper` | 메인 백서 파일: `README.md` (영문 보조) / `README.ko.md` (한글 원본)
-  * 최상위 거점 관문 및 메인 저장소 (`soma-moa`) — GitHub: `deundeuni / soma-moa` | CERN Zenodo DOI: `10.5281/zenodo.22435773` (https://doi.org/10.5281/zenodo.22435773) | 관문 도메인: `somamoa.ai.kr` | 거점 철학 조항: `PHILOSOPHY.ko.md` (soma-moa 0번 헌장, 4-4장 하인리히 1931 재해석 & Safety-II / Just Culture / Quiet Assist 정립)
+  * 최상위 거점 관문 및 메인 저장소 (`soma-moa`) — GitHub: `deundeuni / soma-moa` | CERN Zenodo DOI: `10.5281/zenodo.22435773` | 관문 도메인: `somamoa.ai.kr` | 거점 철학 조항: `PHILOSOPHY.ko.md` (soma-moa 0번 헌장, 4-4장 하인리히 1931 재해석 & Safety-II / Just Culture / Quiet Assist 정립)
 * **법적 근거 및 적용 라이선스 규정 (Legal Statutes & Licenses)**
   * 대한민국 특허법 제103조 — 선사용에 의한 통상실시권
   * 미국 특허법 35 U.S.C. §273 — Defense to Infringement Based on Prior Commercial Use
@@ -147,4 +150,6 @@
 
 ## 부록 A. 제개정 이력 (Revision History)
 
-* **v1.0 (2026-09-20):** 최초 공개 — 협착점 위험기계 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 통합 규격 정립 (`v1.0 Core Baseline`)
+* **v1.2 (2026-09-20):** 면책 조항 톤 완화(AS-IS) 및 마스터 허브 저장소 표기법(소문자 케밥케이스) 동기화 원복 (`v1.2 Core Baseline`)
+* **v1.1 (2026-09-20):** 상용화 권고, KCs/CE/UL 등 법적 안전인증 취득 의무 및 면책 조항 명시적 강화
+* **v1.0 (2026-09-20):** 최초 공개 — 협착점 위험기계 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 통합 규격 정립
