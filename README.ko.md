@@ -1,4 +1,4 @@
-# Press-Brake-Shear-Edge-Safety-Paper — 프레스·절곡기·절단기 및 롤벤딩·노칭·복합판금기류 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 (v1.52 Prior-Art Refined Baseline)
+# Press-Brake-Shear-Edge-Safety-Paper — 프레스·절곡기·절단기 및 롤벤딩·노칭·복합판금기류 근접 안전 시스템 및 로컬 AI 엣지 자율 생존 제어 아키텍처 (v1.53 Prior-Art Refined Baseline)
 
 > 원본 권위 고지: 본 기술 명세의 최상위 법적·공학적 권위는 한글 원본(README.ko.md)에 있습니다. README.md는 보조 영문 참고본입니다. 불일치 시 한글 원본이 우선합니다.
 
